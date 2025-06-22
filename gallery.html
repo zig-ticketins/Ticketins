@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./output.css" rel="stylesheet" />
+    <title>Gallery - Ticketins - Travel & Tours</title>
+    <link rel="icon" href="images/LogoWhite.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/2.7.0/css/lightgallery.min.css" />
+</head>
+
+<body class="bg-light">
+    <!--Header/Navbar (Same as other pages)-->
+    <header class="bg-white shadow-lg fixed w-full z-50 py-1">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <!--Logo-->
+                <div class="flex h-16 items-center">
+                    <img src="images/Logo.png" alt="Logo" class="h-12 object-cover select-none" draggable="false" />
+                    <div class="flex-shrink-0 flex flex-col items-center">
+                        <span class="text-2xl font-bold text-dark leading-none">TICKETINS</span>
+                        <span class="text-base text-dark leading-tight">Travel & Tours</span>
+                    </div>
+                </div>
+
+                <!--Desktop Navigation-->
+                <div class="hidden lg:block">
+                    <div class="ml-10 flex items-center space-x-8 max-[1066px]:space-x-3">
+                        <a href="index.html" class="text-dark font-medium hover:text-primary transition">Home</a>
+                        <a href="about.html" class="text-dark font-medium hover:text-primary transition">About Us</a>
+                        <a href="travel.html" class="text-dark font-medium hover:text-primary transition">Tour
+                            Packages</a>
+                        <a href="other.html" class="text-dark font-medium hover:text-primary transition">Other
+                            Services</a>
+                        <a href="contact.html" class="text-dark font-medium hover:text-primary transition">Contact
+                            Us</a>
+                        <a href="#" class="text-primary font-medium hover:text-primary transition">Gallery</a>
+                        <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-secondary transition">
+                            Book Now
+                        </button>
+                    </div>
+                </div>
+
+                <!--Mobile menu button-->
+                <div class="lg:hidden">
+                    <button id="menu-toggle" class="lg:hidden text-dark hover:text-secondary focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path id="top-line" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16" class="transition-all duration-300 origin-center transform"></path>
+                            <path id="middle-line" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 12h16" class="transition-all duration-300 opacity-100"></path>
+                            <path id="bottom-line" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 18h16" class="transition-all duration-300 origin-center transform"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!--Mobile Navigation-->
+            <div id="mobile-menu"
+                class="lg:hidden fixed top-16 left-0 right-0 bg-white shadow-lg overflow-hidden transition-all duration-300 ease-in-out max-h-0 opacity-0 flex flex-col">
+                <div class="h-[calc(100vh-60px)] overflow-y-auto pt-4 px-4">
+                    <a href="index.html"
+                        class="block px-3 py-2 rounded-lg text-base font-medium text-dark hover:bg-gray-100">Home</a>
+                    <a href="about.html"
+                        class="block px-3 py-2 rounded-lg text-base font-medium text-dark hover:bg-gray-100">About
+                        Us</a>
+                    <a href="travel.html"
+                        class="block px-3 py-2 rounded-lg text-base font-medium text-dark hover:bg-gray-100">Tour
+                        Packages</a>
+                    <a href="other.html"
+                        class="block px-3 py-2 rounded-lg text-base font-medium text-dark hover:bg-gray-100">Other
+                        Services</a>
+                    <a href="contact.html"
+                        class="block px-3 py-2 rounded-lg text-base font-medium text-dark hover:bg-gray-100">Contact
+                        Us</a>
+                    <a href="#"
+                        class="block px-3 py-2 rounded-lg text-base font-medium text-primary hover:bg-gray-100">Gallery</a>
+                </div>
+                <div class="absolute bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200">
+                    <button class="w-full bg-primary text-white px-4 py-3 rounded-lg hover:bg-secondary transition">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!--Gallery Hero Section-->
+        <section class="gallery-hero pt-16 pb-32 text-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Travel Gallery</h1>
+                <p class="text-xl max-w-3xl mx-auto">
+                    Explore breathtaking destinations through the eyes of our travelers
+                </p>
+            </div>
+        </section>
+
+        <!--Gallery Content-->
+        <section class="py-16 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                    <h2 class="text-2xl font-bold text-dark mb-4 md:mb-0">
+                        Featured Destinations
+                    </h2>
+                    <div class="flex flex-wrap gap-2">
+                        <button
+                            class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition active"
+                            data-filter="all">
+                            All
+                        </button>
+                        <button
+                            class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition"
+                            data-filter="europe">
+                            Europe
+                        </button>
+                        <button
+                            class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition"
+                            data-filter="asia">
+                            Asia
+                        </button>
+                        <button
+                            class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition"
+                            data-filter="americas">
+                            Americas
+                        </button>
+                        <button
+                            class="filter-btn px-4 py-2 rounded-full border border-gray-300 hover:bg-primary hover:text-white transition"
+                            data-filter="africa">
+                            Africa
+                        </button>
+                    </div>
+                </div>
+
+                <!--Gallery Grid-->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="lightgallery">
+                    <!--Gallery Item 1-->
+                    <a href="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80"
+                        class="gallery-item group rounded-xl overflow-hidden relative"
+                        data-src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80"
+                        data-sub-html="<h4>Paris, France</h4><p>The Eiffel Tower at sunset</p>" data-category="europe">
+                        <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80"
+                            alt="Paris, France" class="w-full h-80 object-cover" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div>
+                                <h3 class="text-white font-bold text-xl">Paris, France</h3>
+                                <p class="text-gray-200">The Eiffel Tower at sunset</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--Gallery Item 2-->
+                    <a href="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="gallery-item group rounded-xl overflow-hidden relative"
+                        data-src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        data-sub-html="<h4>Bali, Indonesia</h4><p>Beautiful beach at golden hour</p>"
+                        data-category="asia">
+                        <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Bali, Indonesia" class="w-full h-80 object-cover" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div>
+                                <h3 class="text-white font-bold text-xl">Bali, Indonesia</h3>
+                                <p class="text-gray-200">Beautiful beach at golden hour</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--Gallery Item 3-->
+                    <a href="https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1453&q=80"
+                        class="gallery-item group rounded-xl overflow-hidden relative"
+                        data-src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1453&q=80"
+                        data-sub-html="<h4>Kyoto, Japan</h4><p>Traditional temple in autumn</p>" data-category="asia">
+                        <img src="https://images.unsplash.com/photo-1492571350019-22de08371fd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1453&q=80"
+                            alt="Kyoto, Japan" class="w-full h-80 object-cover" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div>
+                                <h3 class="text-white font-bold text-xl">Kyoto, Japan</h3>
+                                <p class="text-gray-200">Traditional temple in autumn</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--Gallery Item 4-->
+                    <a href="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="gallery-item group rounded-xl overflow-hidden relative"
+                        data-src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        data-sub-html="<h4>Patagonia, Chile</h4><p>Stunning mountain landscape</p>"
+                        data-category="americas">
+                        <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Patagonia, Chile" class="w-full h-80 object-cover" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div>
+                                <h3 class="text-white font-bold text-xl">Patagonia, Chile</h3>
+                                <p class="text-gray-200">Stunning mountain landscape</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--Gallery Item 5-->
+                    <a href="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1530&q=80"
+                        class="gallery-item group rounded-xl overflow-hidden relative"
+                        data-src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1530&q=80"
+                        data-sub-html="<h4>Serengeti, Tanzania</h4><p>Elephants on the savanna</p>"
+                        data-category="africa">
+                        <img src="https://images.unsplash.com/photo-1523482580672-f109ba8cb9be?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1530&q=80"
+                            alt="Serengeti, Tanzania" class="w-full h-80 object-cover" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div>
+                                <h3 class="text-white font-bold text-xl">
+                                    Serengeti, Tanzania
+                                </h3>
+                                <p class="text-gray-200">Elephants on the savanna</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--Gallery Item 6-->
+                    <a href="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="gallery-item group rounded-xl overflow-hidden relative"
+                        data-src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        data-sub-html="<h4>Bahamas</h4><p>Crystal clear turquoise waters</p>" data-category="americas">
+                        <img src="https://images.unsplash.com/photo-1519046904884-53103b34b206?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Bahamas" class="w-full h-80 object-cover" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div>
+                                <h3 class="text-white font-bold text-xl">Bahamas</h3>
+                                <p class="text-gray-200">Crystal clear turquoise waters</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--Gallery Item 7-->
+                    <a href="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1368&q=80"
+                        class="gallery-item group rounded-xl overflow-hidden relative"
+                        data-src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1368&q=80"
+                        data-sub-html="<h4>Santorini, Greece</h4><p>Iconic white buildings with blue domes</p>"
+                        data-category="europe">
+                        <img src="https://images.unsplash.com/photo-1506929562872-bb421503ef21?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1368&q=80"
+                            alt="Santorini, Greece" class="w-full h-80 object-cover" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div>
+                                <h3 class="text-white font-bold text-xl">
+                                    Santorini, Greece
+                                </h3>
+                                <p class="text-gray-200">
+                                    Iconic white buildings with blue domes
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--Gallery Item 8-->
+                    <a href="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="gallery-item group rounded-xl overflow-hidden relative"
+                        data-src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        data-sub-html="<h4>Rome, Italy</h4><p>The Colosseum at golden hour</p>" data-category="europe">
+                        <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Rome, Italy" class="w-full h-80 object-cover" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div>
+                                <h3 class="text-white font-bold text-xl">Rome, Italy</h3>
+                                <p class="text-gray-200">The Colosseum at golden hour</p>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!--Gallery Item 9-->
+                    <a href="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        class="gallery-item group rounded-xl overflow-hidden relative"
+                        data-src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                        data-sub-html="<h4>Dubai, UAE</h4><p>Modern skyline at night</p>" data-category="asia">
+                        <img src="https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                            alt="Dubai, UAE" class="w-full h-80 object-cover" />
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-6 opacity-0 group-hover:opacity-100 transition-opacity">
+                            <div>
+                                <h3 class="text-white font-bold text-xl">Dubai, UAE</h3>
+                                <p class="text-gray-200">Modern skyline at night</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!--Load More Button-->
+                <div class="text-center mt-12">
+                    <button
+                        class="bg-transparent hover:bg-primary hover:text-white border-2 border-primary text-primary font-bold py-3 px-8 rounded-lg transition">
+                        Load More
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!--Travel Inspiration-->
+        <section class="py-16 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl font-bold text-dark mb-4">Get Inspired</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Browse our curated collections to find your perfect destination
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!--Collection 1-->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden group">
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1503917988258-f87a78e3c995?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80"
+                                alt="Romantic Getaways"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                <h3 class="text-white text-2xl font-bold">
+                                    Romantic Getaways
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-4">
+                                Discover the most enchanting destinations perfect for couples.
+                            </p>
+                            <button class="text-primary font-medium hover:text-secondary transition">
+                                View Collection →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--Collection 2-->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden group">
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Adventure Travel"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                <h3 class="text-white text-2xl font-bold">
+                                    Adventure Travel
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-4">
+                                For thrill-seekers looking to push their boundaries.
+                            </p>
+                            <button class="text-primary font-medium hover:text-secondary transition">
+                                View Collection →
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--Collection 3-->
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden group">
+                        <div class="relative overflow-hidden h-64">
+                            <img src="https://images.unsplash.com/photo-1518391846015-55a9cc003b25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                                alt="Luxury Retreats"
+                                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-black/30 flex items-center justify-center">
+                                <h3 class="text-white text-2xl font-bold">Luxury Retreats</h3>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <p class="text-gray-600 mb-4">
+                                Indulge in the world's most exclusive resorts and experiences.
+                            </p>
+                            <button class="text-primary font-medium hover:text-secondary transition">
+                                View Collection →
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--CTA Section-->
+        <section class="py-16 bg-primary text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-bold mb-6">
+                    Ready to Create Your Own Travel Memories?
+                </h2>
+                <p class="text-xl mb-8">
+                    Let our experts craft the perfect itinerary for your next adventure.
+                </p>
+                <button
+                    class="bg-white border-2 border-white text-primary font-bold py-3 px-8 rounded-lg hover:bg-primary hover:text-white transition">
+                    Plan Your Trip
+                </button>
+            </div>
+        </section>
+    </main>
+    <!--Footer-->
+    <div class="py-16 bg-primary text-white shapedividers_com-896"></div>
+    <footer class="bg-dark text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex h-16 items-center mb-2">
+                        <img src="images/InvertedLogo.png" alt="Logo" class="h-12 object-cover" />
+                        <div class="flex-shrink-0 flex flex-col items-center">
+                            <span class="text-2xl font-bold text-light leading-none">TICKETINS</span>
+                            <span class="text-base text-light leading-tight">Travel & Tours</span>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 mb-4">Enriching Memories</p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/Ticketinstravelandtours" target="_blank"
+                            class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i
+                                class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="index.html" class="text-gray-400 hover:text-white transition">Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html" class="text-gray-400 hover:text-white transition">About Us</a>
+                        </li>
+                        <li>
+                            <a href="travel.html" class="text-gray-400 hover:text-white transition">Tour Packages</a>
+                        </li>
+                        <li>
+                            <a href="other.html" class="text-gray-400 hover:text-white transition">Other Services</a>
+                        </li>
+                        <li>
+                            <a href="contact.html" class="text-gray-400 hover:text-white transition">Contact Us</a>
+                        </li>
+                        <li>
+                            <a href="gallery.html" class="text-gray-400 hover:text-white transition">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition">Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="#" class="text-gray-400 hover:text-white transition">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-3"></i>
+                            <span>Javier Law Office Bldg., Brgy. San Miguel, Puerto Princesa, Palawan 5300</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope mr-3"></i>
+                            <span>ticketins@yahoo.com</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone-alt mr-3"></i>
+                            <span>(048) 434 1918</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-mobile-screen mr-3"></i>
+                            <span>+63 992 551 5682 | Globe</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-mobile-screen mr-3"></i>
+                            <span>+63 967 205 6758 | Smart</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-mobile-screen mr-3"></i>
+                            <span>+63 948 392 3231 | TNT</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-xl mt-12 text-center text-light">
+                <a href="https://krakendesign.co.uk/"
+                    class="inline-flex items-center gap-2 opacity-50 transition hover:opacity-100">
+                    <img src="images/KrakenDesignLogo.png" alt="Kraken Designs Logo" class="h-12" />
+                    Hosted by Kraken Design
+                </a>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Ticketins Travel & Tours. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--Lightgallery JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery-js/2.7.0/lightgallery.min.js"></script>
+    <script>
+        // Filter functionality
+        const filterButtons = document.querySelectorAll(".filter-btn");
+        const galleryItems = document.querySelectorAll(".gallery-item");
+
+        filterButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+                // Update active state
+                filterButtons.forEach((btn) => btn.classList.remove("active"));
+                button.classList.add("active");
+
+                const filterValue = button.getAttribute("data-filter");
+
+                galleryItems.forEach((item) => {
+                    if (
+                        filterValue === "all" ||
+                        item.getAttribute("data-category").includes(filterValue)
+                    ) {
+                        item.style.display = "block";
+                    } else {
+                        item.style.display = "none";
+                    }
+                });
+            });
+        });
+
+        // Initialize lightgallery
+        lightGallery(document.getElementById("lightgallery"), {
+            selector: ".gallery-item",
+            download: false,
+            counter: false,
+        });
+    </script>
+    <script src="hamburger-menu.js" defer></script>
+</body>
+
+</html>
